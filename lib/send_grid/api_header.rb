@@ -1,6 +1,6 @@
 class SendGrid::ApiHeader
   attr_reader :data
-
+  
   def initialize
     @data = Hash.new { |h,k| h[k] = Hash.new(&h.default_proc) }
   end
@@ -29,4 +29,5 @@ class SendGrid::ApiHeader
   def to_json
     JSON.generate(@data, :array_nl => ' ')
   end
+
 end

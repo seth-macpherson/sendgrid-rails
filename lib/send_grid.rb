@@ -17,9 +17,14 @@ module SendGrid
       @send_grid_header ||= SendGrid::ApiHeader.new
     end
 
+    def smtp_credentials(val)
+      @credentials = val if val.instance_of?(Hash) && val.has_key?(:user_name)
+    end
+
     def mail_with_sendgrid(headers={}, &block)
       mail_without_sendgrid(headers, &block).tap do |message|
-        message.instance_variable_set :@sendgrid_header, sendgrid_header
+        message.instance_variable_set(:@sendgrid_header, sendgrid_header)
+        message.instance_variable_set(:@smtp_credentials, @credentails) unless @credentails.nil?
       end
     end
 

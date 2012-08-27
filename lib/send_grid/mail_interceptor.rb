@@ -8,6 +8,7 @@ module SendGrid
       # since we're using headers, we need to explicitly set the recipient header
       sendgrid_header.add_recipients(mail_message.to)
       mail_message.header['X-SMTPAPI'] = sendgrid_header.to_json if sendgrid_header.data.present?
+      # Let's keep our emails valid, shall we?
       # mail_message.header['to'] = 'dummy@email.com'
       
       # mail_message.perform_deliveries = false unless Rails.env.production?

@@ -17,6 +17,7 @@ module SendGrid
       @send_grid_header ||= SendGrid::ApiHeader.new
     end
 
+    # Collects credentials for use in MailInterceptor
     def smtp_credentials(val)
       @credentials = val if val.instance_of?(Hash) && val.has_key?(:user_name)
     end

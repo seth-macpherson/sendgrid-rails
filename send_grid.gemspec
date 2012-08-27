@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "sendgrid-rails"
   s.version     = SendGrid::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["PavelTyk"]
-  s.email       = ["paveltyk@gmail.com"]
-  s.homepage    = "https://github.com/PavelTyk/sendgrid-rails"
-  s.summary     = %q{SendGrid gem fo Rails 3}
-  s.description = %q{Gem to extend ActionMailer with SendGrid API support}
+  s.authors     = ["PavelTyk","seth-macpherson"]
+  s.email       = ["paveltyk@gmail.com","seth.macpherson@gmail.com"]
+  s.homepage    = "https://github.com/seth-macpherson/sendgrid-rails"
+  s.summary     = %q{SendGrid gem fo Rails 3 (forked from PavelTyk)}
+  s.description = %q{Gem to extend ActionMailer with SendGrid API support.  Now includes SMTP credential support.}
 
   s.rubyforge_project = "sendgrid-rails"
 

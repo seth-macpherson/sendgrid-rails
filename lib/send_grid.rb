@@ -24,7 +24,7 @@ module SendGrid
     def mail_with_sendgrid(headers={}, &block)
       mail_without_sendgrid(headers, &block).tap do |message|
         message.instance_variable_set(:@sendgrid_header, sendgrid_header)
-        message.instance_variable_set(:@smtp_credentials, @credentails) unless @credentails.nil?
+        message.instance_variable_set(:@smtp_credentials, @credentials) unless @credentials.nil?
       end
     end
 
